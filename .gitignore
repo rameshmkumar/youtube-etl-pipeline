@@ -1,3 +1,4 @@
 # Ignore environment variables file
 .env
 read_me.rtf
+venv/
