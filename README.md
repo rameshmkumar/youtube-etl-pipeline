@@ -113,13 +113,14 @@ This serves as a foundational portfolio project showcasing the ability to:
     *   **Query Data:** Run `SELECT * FROM trending_videos LIMIT 10;` to view the loaded data.
 
 ## Project Structure
-
+```
 youtube-pipeline/
 ├── .env # Stores API key
 ├── .gitignore 
 ├── pipeline.py # Main Python script for the ETL pipeline
 ├── requirements.txt # Python dependencies
 └── README.md 
+```
 
 ## Contact
 
