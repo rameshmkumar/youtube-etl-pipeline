@@ -6,18 +6,21 @@ import pandas as pd
 from datetime import datetime
 from sqlalchemy import create_engine
 
-DB_USER='dudu'
-DB_PASSWORD='1122'
-DB_HOST='localhost'
-DB_PORT='5433'
-DB_NAME='youtubedb'
+
+
+load_dotenv()
+API_KEY = os.getenv('YOUTUBE_API_KEY')
+DB_USER = os.getenv('POSTGRES_USER')
+DB_PASSWORD = os.getenv('POSTGRES_PASSWORD')
+DB_HOST = os.getenv('POSTGRES_HOST')
+DB_PORT = os.getenv('POSTGRES_PORT')
+DB_NAME = os.getenv('POSTGRES_DB')
 
 DATABASE_URL=f'postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}'
 engine=create_engine(DATABASE_URL)
 print("Database connection established")
 
-load_dotenv()
-API_KEY = os.getenv('YOUTUBE_API_KEY')   #connect to the system and get the API KEY
+
 
 def get_trending_videos(api_key, region_code='US', max_results=50):
     base_url = 'https://www.googleapis.com/youtube/v3/videos'
